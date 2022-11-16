@@ -122,8 +122,88 @@ namespace WFA_xmlread
             DataSet ds = new DataSet();
             ds.ReadXml(file);
             dataGridView1.DataSource = ds.Tables[2];
-            dataGridView1.Columns[0].Visible = false;
+
+            
+
+            dataGridView1.Columns["Value"].HeaderCell.Value = "Nagdsiz Alish";
+            dataGridView1.Columns["Code"].HeaderCell.Value = "Valyuta";
+
+            //dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns.Remove("Nominal");
+            dataGridView1.Columns.Remove("Name");
             dataGridView1.Columns.Add("Column", "Tarix");
+            dataGridView1.Columns.Add("Column", "Kur cins");
+
+            dataGridView1.Rows[0].Cells[0].Value = "1.000";
+            dataGridView1.Rows[0].Cells[1].Value = "AZN";
+
+
+            /*DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+            row.Cells[0].Value = "1.000";
+            row.Cells[1].Value = "AZN";
+            dataGridView1.Rows.Add(row);*/
+
+            //dataGridView1.Rows[0].Visible = false;
+            dataGridView1.Rows.RemoveAt(1);
+            dataGridView1.Rows.RemoveAt(1);
+            dataGridView1.Rows.RemoveAt(1);
+            dataGridView1.Rows.RemoveAt(4);
+            dataGridView1.Rows.RemoveAt(4);
+            dataGridView1.Rows.RemoveAt(4);
+            dataGridView1.Rows.RemoveAt(5);
+            dataGridView1.Rows.RemoveAt(5);
+            dataGridView1.Rows.RemoveAt(5);
+            dataGridView1.Rows.RemoveAt(5);
+            dataGridView1.Rows.RemoveAt(8);
+            dataGridView1.Rows.RemoveAt(8);
+            dataGridView1.Rows.RemoveAt(9);
+            dataGridView1.Rows.RemoveAt(9);
+            dataGridView1.Rows.RemoveAt(11);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(13);
+            dataGridView1.Rows.RemoveAt(14);
+            dataGridView1.Rows.RemoveAt(15);
+            dataGridView1.Rows.RemoveAt(16);
+            dataGridView1.Rows.RemoveAt(16);
+            dataGridView1.Rows.RemoveAt(16);
+
+            dataGridView1.Rows[18].Cells[0].Value = "22.000";
+            dataGridView1.Rows[18].Cells[1].Value = "XGQ";
+
+            dataGridView1.Rows[19].Cells[0].Value = "12.000";
+            dataGridView1.Rows[19].Cells[1].Value = "XGR";
+
+
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[2].Value = theDate;
+
+            }
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[3].Value = "TCMB";
+            }
+
+
+            //dataGridView1.Rows.RemoveAt(0);
+
+            dataGridView1.Columns[2].DisplayIndex = 0;
+            dataGridView1.Columns[0].DisplayIndex = 2;
+            dataGridView1.Columns[1].DisplayIndex = 3;
+            dataGridView1.Columns[3].DisplayIndex = 1;
+
+            
+
 
         }
     }
